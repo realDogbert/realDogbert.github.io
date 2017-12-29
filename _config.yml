@@ -7,6 +7,10 @@ baseurl:     ""
 url:         "http://grobskizziert.de"
 date_format: "%b %-d, %Y"
 
+# This will require each of these plugins automatically.
+plugins:
+- jekyll-paginate
+
 # Google services
 google_analytics: UA-46381629-1
 google_verification:
