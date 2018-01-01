@@ -20,12 +20,12 @@ Mit
 wird dann der aktuelle Entwicklungsstand direkt in die NGINX VM gelinkt und die Webseite kann im Browser mit _http://[lokale IP der Docker VM]:8080_ geöffnet wird.
 Funktioniert auch sehr gut bis auf ...
 
-##Das Problem
+## Das Problem
 
 Während des Entwicklens neigt man ja dazu die eine oder andere Datei zu ändern. Und diese Änderungen möchte mann dann auch sofort im Browser sehen. Bei HTML Dateien funktioniert das noch ganz gut, aber andere statische Dateien, wie z.B. CSS oder auch JSON Dateien werden nicht geupdated, es wird einfach der alte Stand ausgeliefert. 
 Der Server meldet zwar ein freudiges *200 OK* zurück, aber die durchgeführten Anpassungen in der Datei sind nicht zu sehen. Die Datei sieht noch so aus wie am Anfang. Da hilft auch ein Neustart des Servers oder auch des ganzen Docker Container nichts.
 
-##Die Lösung
+## Die Lösung
 
 In den neuesten Versionen von Apache und NGINX ist das sogenannte _sendfile_ Feature verbaut. Damit kommt die aktuelle Version von VirtualBox anscheinend nicht klar. Ich hätte das Problem vermutlich noch Stunden gesucht, wenn ich nicht auf den Artikel [VirtualBox Hates Sendfile][VBHatesSendfile] gestoßen wäre. Wenn das erst mal erkannt wird, dann ist die Lösung eigentlich trivial: man deaktiviert das _sendfile_ Feature im Server. 
 Für den NGINX Server kann man das im der Datei nginx.conf im http-Bereicht mit dem Feature Toggle _sendfile off;_ erreichen. Ein simple Konfiguration für NGINX sieht dann z.B. so aus:

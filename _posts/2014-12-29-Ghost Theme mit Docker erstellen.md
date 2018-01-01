@@ -15,7 +15,7 @@ Die Vorteile liegen auf der Hand
 
 Eine grundlegende Einführungen zu Docker gibt es auf der [Docker WebSite](https://www.docker.com) oder auch auf [YouTube](https://www.youtube.com/results?search_query=docker), eine Anleitung wie man ein Ghost Theme erstellt findet sich auf der [Ghost WebSite](http://support.ghost.org/ghost-themes-overview/). In diesem Post geht es einzig darum wie man Docker nutzen kann, um eine Entwicklungsumgebung innerhalb von 5 Minuten auf seinem lokal Rechner einrichten kann.
 
-##Boot2Docker
+## Boot2Docker
 Docker läuft leider nicht native auf allen Betriebssystemen. Wenn man Mac OS oder Windows nutzt, dann muss man zuerst Boot2Docker installieren. Einfach den Installer für das eigenen Betriebssystem von der [Boot2Docker WebSite](http://boot2docker.io) herunterladen und installieren.
 
 Danach eine Shell öffnen und Boot2Docker starten. 
@@ -26,7 +26,7 @@ Wenn Boot2Docker gestartet wurde, dann kann man mit
 `Boot2docker ip`  
 Die IP Adresse der gestarteten Boot2Docker-VM erfragen. Im Normalfall sollte das *192.168.59.103* sein. Diese IP Adresse ist wichtig, damit kann man die GUI des Ghost Docker-Containers im Browser aufrufen.
 
-##Docker
+## Docker
 Jetzt kommen wir zu Docker. Der Docker Hub stellt bereits ein komplett vorinstalliertes Image für Ghost zur Verfügung: [dockerfile/ghost](https://registry.hub.docker.com/u/dockerfile/ghost/). Dieses Image lädt man mit 
 `docker pull dockerfile/ghost`
 
@@ -63,7 +63,7 @@ Wenn in einem Docker Theme eine neue Datei hinzugefügt wird, dann ist diese ers
 `dockerfile/ghost`  
 Zu guter letzt muss Docker mitgeteilt werden aus welchem Image er den Docker-Container starte soll. Natürlich ist es das voher aus dem Docker Hub geladene Image für Ghost. 
 
-##Ghost
+## Ghost
 und jetzt kann Ghost im Browser unter http://[Boot2Docker-IP]:80 aufgerufen werden.
 
 ![Ghost Interface](/images/ghost-1.png)
