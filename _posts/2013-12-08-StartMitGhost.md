@@ -4,8 +4,6 @@ title: Start mit Ghost
 ---
 
 
-![Ghost](/images/Screenshot_Ghost_org.png)
-
 Irgendwann gibt es einen Zeitpukt, an dem man schon so viel gelesen hat, dass es Zeit wird, auch selbst einmal etwas zu schreiben.
 Bei mir war der Auslöser weniger ein Drang, der Welt etwas mitzuteilen (es ist mir schon klar, dass es inzwischen gefühlt mehr Blogger als Leser gibt), als eher der, etwas auszuprobieren: das Blogging System **Ghost**.
 
