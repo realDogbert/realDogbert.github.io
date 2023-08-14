@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About Me
-description: This is what I do.
+title: Über mich
+description: "Mein Name ist Frank und ich bin der Author des Blogs Grob Skizziert."
 background: '/img/bg-about.jpg'
 ---
 
