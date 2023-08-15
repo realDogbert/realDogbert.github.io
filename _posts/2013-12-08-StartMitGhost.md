@@ -9,15 +9,15 @@ background: '/img/posts/01.jpg'
 
 ![Ghost](/img/posts/Screenshot_Ghost_org.png)
 
-##Warum Ghost?
+## Warum Ghost?
 Eigentlich weiß ich nicht mehr genau, wie ich auf Ghost als Blogging Plattform aufmerksam wurde. Aber ich weiß noch, dass ich von der grundlegenden Idee von [Ghost](http://john.onolan.org/project-ghost/) sofort überzeugt war. 
 Und von der Gestaltung. Die GUI von Ghost ist extrem einfach, übersichtlich und sehr ansprechend. So einfach und ansprechend, dass ich diese Oberfläche vom ersten Augenblick an benutzen will. Und wenn ich dafür mit dem Bloggen anfangen muss ...
 
-##Die ersten Schritte
+## Die ersten Schritte
 Leider war das nicht ganz so einfach, wie man es sich wünschen würde, da [Ghost](http://ghost.org) noch kein fertiges Produkt ist. Ghost ist bei Weitem noch nicht so weit entwicklet wie z.B. [Medium](https://medium.com), wo man sich registriert und dann einfach los-bloggen kann. Wenn man Ghost nutzen will, dann muss man den Beta-Code von Ghost auschecken und auf seinem eigenen WebServer installieren, konfigurieren und starten. 
 Das Entwicklerteam von Ghost arbeitet daran, diesen Umstand zu ändern, aber aktuell ist das der einzige Weg, Ghost zu nutzen.
 
-###Ghost Setup
+### Ghost Setup
 Die Technik hinter Ghost ist aus meiner Perspektive heraus ungewöhnlich: Das komplette Backend ist in **JavaScript** geschrieben und läuft auf [node.js](http://nodejs.org). 
 Ich komme aus der JEE-Welt, d.h. ich tue mich also schon von Haus aus schwer damit, Skript-Sprachen-basierte Systeme wie z.B. PHP zu akzeptieren (btw: Ich bin gerade dabei, an dieser Stelle ein wenig flexibler zu werden). Und dann auch noch JavaScript!
 
@@ -28,11 +28,11 @@ Also, mal sehen, wie sich JavaScript inwischen so auf dem Server macht.
 Node.js ist noch keine der Komponenten, die automatisch auf einem Server installiert sind. Und es ist auch noch nicht wirklich so weit, dass sich Provider ernsthaft damit beschäftigen. Also ist Handarbeit angesagt. Node.js installieren, Ghost laden, installieren, konfigurieren und als Serverprozess (im Produktions-Modus) starten. Wenn man es noch schöner machen möchte, dann muss man noch einen Apache installieren und auf den Ghost-Port weiterleiten.
 
 ### Das eigene Ghost Blog
-####Der 1. Start
+#### Der 1. Start
 Wenn Ghost läuft, dann sollte man sich **sofort** einloggen, denn der 1. Login wird automatisch der Admin-Account. Und das will man vermutlich gerne selbst sein.
 Kurz die eigenen Daten eingeben, ein Icon und ein Startbild hochladen und damit hat man Ghost prinzipiell schon vollständig konfiguriert.
 
-####Der Ghost Editor
+#### Der Ghost Editor
 Jetzt kann man anfangen, seine eigenen Posts zu schreiben. Ein Beispiel-Post wird bereits mit der Ghost Installation ausgeliefert: **Welcome to Ghost**.
 Mit diesem Post wird gezeigt, wie man gültige [Markdown-Syntax](http://daringfireball.net/projects/markdown/syntax) für seine eigenen Einträge schreibt. Das beinhaltet Überschriften, Hervorhebungen, Listen, aber auch Links, Bilder und Code-Snippets. Ich kann nur jedem empfehlen, sich diesen Post genauer anzusehen.
 Der Editor für die Ghost Posts ist zweigeteilt: Auf der linken Seite ist die Arbeitsfläche und rechts die Live-Preview des Posts.

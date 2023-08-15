@@ -29,13 +29,18 @@ layout: default
 
         {{ content }}
 
-        Foto von <a href="https://unsplash.com/de/@pavstyuk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mikhail Pavstyuk</a> auf <a href="https://unsplash.com/de/fotos/EKy2OTRPXdw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+        <!-- Foto von <a href="https://unsplash.com/de/@pavstyuk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mikhail Pavstyuk</a> auf <a href="https://unsplash.com/de/fotos/EKy2OTRPXdw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> -->
   
 
         <!-- Home Post List -->
         {% for post in site.posts limit : 5 %}
 
         <article class="post-preview">
+
+          <p class="post-meta">
+            {{ post.date | date: '%B %d, %Y' }}
+          </p>
+
           <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
             <h2 class="post-title">{{ post.title }}</h2>
             {% if post.subtitle %}
@@ -44,14 +49,8 @@ layout: default
             <h3 class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 15 }}</h3>
             {% endif %}
           </a>
-          <p class="post-meta">Veröffentlicht von
-            {% if post.author %}
-            {{ post.author }}
-            {% else %}
-            {{ site.author }}
-            {% endif %}
-            am
-            {{ post.date | date: '%B %d, %Y' }} &middot; <br> {% include read_time.html content=post.content %}            
+          <p class="post-meta">
+            {% include read_time.html content=post.content %}            
           </p>
         </article>
 
