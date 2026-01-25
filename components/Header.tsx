@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { HeaderProps } from '@/lib/types';
 
-export default function Header({ title = "My Blog", tagline }: HeaderProps) {
+export default function Header({ title = "Grob skizziert", tagline }: HeaderProps) {
   return (
     <header className="mb-12">
       <Link href="/" className="block">

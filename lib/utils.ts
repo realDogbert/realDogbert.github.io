@@ -8,7 +8,7 @@
  * @returns Formatted date string (e.g., "January 25, 2026")
  */
 export function formatDate(date: Date): string {
-  return new Intl.DateTimeFormat('en-US', {
+  return new Intl.DateTimeFormat('de-DE', {
     year: 'numeric',
     month: 'long',
     day: 'numeric'

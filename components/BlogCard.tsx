@@ -15,7 +15,7 @@ export default function BlogCard({ post }: BlogCardProps) {
             {formatDate(post.publishedAt)}
           </time>
           <span>•</span>
-          <span>{post.readTime} min read</span>
+          <span>{post.readTime} Min. Lesedauer</span>
         </div>
         
         <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">

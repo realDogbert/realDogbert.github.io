@@ -24,13 +24,13 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 py-12 px-4">
       <main className="max-w-2xl mx-auto">
-        <Header tagline="Thoughts on web development, design, and technology" />
+        <Header tagline="Wer nicht auf das Kleine schaut, scheitert am Großem." />
         
         <Link 
           href="/" 
           className="inline-flex items-center text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 mb-8 transition-colors"
         >
-          ← Back to all posts
+          ← Zurück zur Übersicht
         </Link>
         
         <article>
@@ -44,9 +44,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
                 {formatDate(post.publishedAt)}
               </time>
               <span>•</span>
-              <span>{post.readTime} min read</span>
-              <span>•</span>
-              <span>{post.author}</span>
+              <span>{post.readTime} Min. Lesedauer</span>
             </div>
           </header>
           
