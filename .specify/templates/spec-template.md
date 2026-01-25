@@ -105,6 +105,13 @@
 <!--
   ACTION REQUIRED: Define measurable success criteria.
   These must be technology-agnostic and measurable.
+  
+  For my-blog, consider constitution requirements:
+  - Performance: Lighthouse Performance ≥90
+  - Accessibility: Lighthouse Accessibility ≥95
+  - Core Web Vitals: LCP <2.5s, FID <100ms, CLS <0.1
+  - Type Safety: Zero TypeScript errors on build
+  - Minimal Dependencies: Justify any new npm packages
 -->
 
 ### Measurable Outcomes
@@ -113,3 +120,5 @@
 - **SC-002**: [Measurable metric, e.g., "System handles 1000 concurrent users without degradation"]
 - **SC-003**: [User satisfaction metric, e.g., "90% of users successfully complete primary task on first attempt"]
 - **SC-004**: [Business metric, e.g., "Reduce support tickets related to [X] by 50%"]
+- **SC-005**: [Performance, e.g., "Page loads in <2 seconds on 3G connection"]
+- **SC-006**: [Accessibility, e.g., "All interactive elements keyboard navigable"]
