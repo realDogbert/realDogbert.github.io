@@ -10,14 +10,16 @@ slug: "docker-virtualbox-sendfile"
 Etwas schwieriger wird es, wenn die Webseite nur dann funktioniert wenn sie über einen Server ausgelifert wird. Aber auch da gibt es eine Lösung: Man installiert auf dem lokalen System einfach einen WebServer, z.B.  [Apache](https://httpd.apache.org) oder [NGINX](https://www.nginx.com).
 Aber warum das lokale System mit immer neuen Installationen von Server verschmutzen? Mit [Docker](https://www.docker.com) geht es so viel einfacher:
 
-{% highlight Powershell %}
+```shell
 docker run --name some-nginx -v [lokales Entwicklungsverzeichns]:/usr/share/nginx/html:ro -d nginx
-{% endhighlight %}
+```
 
 Schon wird die aktuellste Version von NGINX vom [Docker Hub](https://hub.docker.com) gezogen und auf dem lokalen System gestartet. Keine Installation mehr notwendig (obwohl die mit brew inzwischen auch sehr leicht von der Hand geht).
 Mit 
 
-`-v [lokales Entwicklungsverzeichns]:/usr/share/nginx/html:ro` 
+```shell
+-v [lokales Entwicklungsverzeichns]:/usr/share/nginx/html:ro
+``` 
 
 wird dann der aktuelle Entwicklungsstand direkt in die NGINX VM gelinkt und die Webseite kann im Browser mit _http://[lokale IP der Docker VM]:8080_ geöffnet wird.
 Funktioniert auch sehr gut bis auf ...
@@ -66,6 +68,3 @@ http {
     include /etc/nginx/conf.d/*.conf;
 }
 ```
-
-
-[VBHatesSendfile]: https://abitwiser.wordpress.com/2011/02/24/virtualbox-hates-sendfile/
