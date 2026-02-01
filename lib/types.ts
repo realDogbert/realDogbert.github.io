@@ -79,3 +79,45 @@ export interface BlogPostPageProps {
     slug: string;
   };
 }
+
+/**
+ * Represents a single navigation link in the header
+ * 
+ * @example
+ * const homeLink: NavigationLink = {
+ *   href: '/',
+ *   label: 'grobsizziert.de'
+ * }
+ */
+export interface NavigationLink {
+  /**
+   * The destination URL path (relative path starting with /)
+   * @example "/" | "/about" | "/blog"
+   */
+  href: string;
+
+  /**
+   * The display text shown for this link
+   * Should be concise for mobile display (ideally ≤20 characters)
+   * @example "grobsizziert.de" | "über" | "alle posts"
+   */
+  label: string;
+}
+
+/**
+ * Props interface for the Navigation component
+ * 
+ * Currently minimal as navigation links are hardcoded within component.
+ * Optional className allows for style extension if needed.
+ * 
+ * @example
+ * <Navigation className="shadow-lg" />
+ */
+export interface NavigationProps {
+  /**
+   * Optional additional CSS classes for component customization
+   * Applied to the root <nav> element
+   * @default undefined
+   */
+  className?: string;
+}
