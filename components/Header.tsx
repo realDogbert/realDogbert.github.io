@@ -1,19 +1,17 @@
-import Link from 'next/link';
 import { HeaderProps } from '@/lib/types';
 
 export default function Header({ title = "Grob skizziert", tagline }: HeaderProps) {
   return (
-    <header className="mb-12">
-      <Link href="/" className="block">
-        <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50 mb-2">
-          {title}
-        </h1>
-        {tagline && (
-          <p className="text-zinc-600 dark:text-zinc-400">
-            {tagline}
-          </p>
-        )}
-      </Link>
+    <header className="mb-16 animate-fade-in-up">
+      <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-semibold tracking-tight text-neutral-900 leading-[0.95]">
+        {title}<span className="text-orange">.</span>
+      </h1>
+      {tagline && (
+        <p className="mt-5 text-base sm:text-lg text-neutral-400 font-body max-w-md leading-relaxed">
+          {tagline}
+        </p>
+      )}
+      <div className="mt-8 w-12 h-[3px] bg-orange" aria-hidden="true" />
     </header>
   );
 }
