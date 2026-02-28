@@ -25,10 +25,13 @@ export default function AboutPage() {
 
           <h2>Über diesen Blog</h2>
           <p>
-            Hier teile ich Gedanken, Tutorials und Erfahrungen aus der Welt der
-            Softwareentwicklung. Die Themen reichen von modernen Web-Frameworks
-            wie Next.js und React bis hin zu Best Practices in TypeScript,
-            Barrierefreiheit und Performance-Optimierung.
+            Mein Name ist Frank von Eitzen – Software Architekt bei der  
+            <a href="https://www.bmw.de/de/index.html" className="text-orange">BMW AG</a> und Hobbyist in Sachen Fitness, Gaming und Miniaturmalerei. 
+          </p>
+          <p>
+            Hier schreibe ich über alles, was mich bewegt, inspiriert oder nervt. 
+            Alle auf diesem Blog geäußerten Meinungen sind meine eigenen und spiegeln 
+            nicht die Ansichten meines Arbeitgebers. Und auch umgekehrt.
           </p>
 
           <h2>Technologie</h2>
