@@ -38,10 +38,6 @@ export default function AboutPage() {
             Markdown-Dateien verwaltet und statisch generiert für optimale Performance.
           </p>
 
-          <h2>Kontakt</h2>
-          <p>
-            <em>Kontaktinformationen folgen in Kürze.</em>
-          </p>
         </article>
       </div>
     </div>
