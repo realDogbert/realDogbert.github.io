@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Navigation from "@/components/Navigation";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import "./globals.css";
 
 const fraunces = localFont({
@@ -56,6 +57,7 @@ export default function RootLayout({
       <body
         className={`${fraunces.variable} ${outfit.variable} antialiased`}
       >
+        <GoogleAnalytics />
         <Navigation />
         <main className="pt-14">
           {children}
