@@ -1,17 +1,43 @@
 import type { Metadata } from "next";
-import { Fraunces, Outfit } from "next/font/google";
+import localFont from "next/font/local";
 import Navigation from "@/components/Navigation";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const fraunces = localFont({
+  src: [
+    {
+      path: "../public/fonts/fraunces-latin-normal.woff2",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/fraunces-latin-ext-normal.woff2",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/fraunces-latin-italic.woff2",
+      style: "italic",
+    },
+    {
+      path: "../public/fonts/fraunces-latin-ext-italic.woff2",
+      style: "italic",
+    },
+  ],
   variable: "--font-fraunces",
-  subsets: ["latin"],
   display: "swap",
 });
 
-const outfit = Outfit({
+const outfit = localFont({
+  src: [
+    {
+      path: "../public/fonts/outfit-latin.woff2",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/outfit-latin-ext.woff2",
+      style: "normal",
+    },
+  ],
   variable: "--font-outfit",
-  subsets: ["latin"],
   display: "swap",
 });
 
