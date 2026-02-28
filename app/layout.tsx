@@ -88,6 +88,13 @@ export default function RootLayout({
                   <path d="M9 18c-4.51 2-5-2-7-2" />
                 </svg>
               </a>
+              <a
+                href="/impressum"
+                aria-label="Impressum"
+                className="text-neutral-400 hover:text-orange transition-colors duration-200"
+              >
+                Impressum
+              </a>
             </div>
           </div>
         </footer>
