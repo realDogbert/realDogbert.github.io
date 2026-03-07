@@ -64,20 +64,21 @@ Als Leser möchte ich den aktiven Tag-Filter einfach wieder entfernen können, u
 - Was passiert, wenn ein Tag keine Posts zugeordnet hat? (Tag wird nicht angezeigt — FR-007)
 - Wie werden Posts ohne Tags behandelt? (Sichtbar ohne Filter; unsichtbar wenn Filter aktiv — FR-006)
 - Was passiert, wenn mehrere Posts identische Tags haben? (Alle erscheinen beim Klick auf das Tag)
-- Wie werden sehr viele Tags dargestellt? → CSS `flex-wrap` sorgt für automatischen Zeilenumbruch; kein horizontales Scrollen. Kein separates Task erforderlich (CSS-only-Lösung mit Tailwind `flex flex-wrap`).
+- Wie werden sehr viele Tags dargestellt? → Tags werden in einer Wolke (Tag Cloud) in der rechten Sidebar dargestellt; CSS `flex-wrap` sorgt für automatischen Zeilenumbruch.
 
 ## Requirements *(mandatory)*
 
 ### Functional Requirements
 
 - **FR-001**: System MUST allow authors to assign one or more tags to each blog post via the Frontmatter.
-- **FR-002**: System MUST extract all unique tags from all posts and display them as a list on the homepage.
-- **FR-003**: System MUST allow users to filter posts by clicking on a tag in the tag list. Only one tag can be active at a time; clicking a new tag replaces the current filter.
+- **FR-002**: System MUST extract all unique tags from all posts and display them as a Tag Cloud in a sticky right-hand sidebar on the homepage.
+- **FR-003**: System MUST allow users to filter posts by clicking on a tag in the Tag Cloud. Only one tag can be active at a time; clicking a new tag replaces the current filter.
 - **FR-004**: System MUST provide a clear way to remove the active tag filter and show all posts again.
 - **FR-005**: System MUST implement tag filtering entirely client-side using JavaScript on a single page (`/`), without generating separate static pages per tag and without URL changes when a filter is applied.
 - **FR-006**: When no tag filter is active, system MUST show all posts regardless of whether they have tags. When a tag filter is active, system MUST show only posts that have the selected tag; posts without tags MUST NOT be shown.
 - **FR-007**: System MUST not display tags that are not assigned to any post.
 - **FR-008**: System MUST normalize all tags to lowercase; tags differing only in casing (e.g., "JavaScript" and "javascript") MUST be treated as a single tag.
+- **FR-009**: Tag Cloud MUST sort tags by post frequency (descending), with alphabetical order as tiebreaker, and MUST scale tag font size proportionally to frequency (range: 0.75rem – 1.25rem).
 - **FR-009**: System MUST display the tag list in alphabetical ascending order (a → z).
 
 ### Key Entities

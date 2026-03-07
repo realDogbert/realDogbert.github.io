@@ -7,7 +7,7 @@
 
 ## Summary
 
-Introduce a `tags` field to all blog post markdown files (frontmatter) and add client-side tag filtering to the homepage. All posts are fetched at build time by the existing `getAllPosts()` Server Component; a new `TagFilteredPostList` Client Component receives them as props and manages a single `activeTag` state. Clicking a tag shows only posts carrying that tag; clicking the same tag or an "Alle Beiträge" button resets the filter. Tags are normalized to lowercase at read time, deduplicated via `Set`, and sorted alphabetically. No new npm dependencies required.
+Introduce a `tags` field to all blog post markdown files (frontmatter) and add client-side tag filtering to the homepage. All posts are fetched at build time by the existing `getAllPosts()` Server Component. A two-column layout (`BlogWithSidebar` Client Component) renders the post list on the left and a sticky `TagCloud` sidebar on the right. The `TagCloud` displays all unique tags sorted by post frequency (most-used first), with font size scaled proportionally to frequency. Clicking a tag shows only posts carrying that tag; clicking the same tag or the "× Alle Beiträge" reset link resets the filter. Tags are normalized to lowercase at read time, deduplicated via `Set`. No new npm dependencies required.
 
 ## Technical Context
 
@@ -53,19 +53,21 @@ specs/[###-feature]/
 
 ```text
 app/
-└── page.tsx              # MODIFY: replace posts.map(...) with <TagFilteredPostList posts={posts} />
+└── page.tsx              # MODIFY: replaced TagFilteredPostList with BlogWithSidebar; max-w-3xl → max-w-5xl
 
 components/
-├── TagFilteredPostList.tsx  # NEW: "use client" — filter state, tag buttons, filtered post list
+├── BlogWithSidebar.tsx   # NEW: "use client" — two-column grid layout, manages activeTag state
+├── TagCloud.tsx          # NEW: "use client" — sticky sidebar tag cloud, frequency-sorted & -sized
+├── TagFilteredPostList.tsx  # SUPERSEDED: replaced by BlogWithSidebar + TagCloud (kept for reference)
 ├── BlogCard.tsx             # EXISTING — unchanged
 ├── BlogPostContent.tsx      # EXISTING — unchanged
 ├── Header.tsx               # EXISTING — unchanged
-└── Navigation.tsx           # EXISTING — unchanged
+└── Navigation.tsx           # MODIFY: max-w-3xl → max-w-5xl to align with new page width
 
 lib/
 ├── types.ts              # MODIFY: add tags: string[] to BlogPost interface
 ├── posts.ts              # MODIFY: read & normalize tags in getAllPosts()
-├── posts/                # MODIFY: add tags frontmatter — 3 posts in Phase 2 (T004); remaining 4 in Phase 4 (T011)
+├── posts/                # MODIFY: add tags frontmatter to all 7 posts
 │   ├── als-ich-uebernaut-wurde.md
 │   ├── blog-reboot.md
 │   ├── docker-ghost-theme.md
@@ -77,7 +79,7 @@ lib/
 └── utils.ts              # EXISTING — unchanged
 ```
 
-**Structure Decision**: Next.js App Router (default for my-blog). No new routes, no API, no test files. Changes confined to 4 source files + 7 markdown posts. No contracts directory needed (feature has no API endpoints or external data contracts).
+**Structure Decision**: Next.js App Router (default for my-blog). No new routes, no API, no test files. `BlogWithSidebar` owns the `activeTag` state and renders a two-column grid (`grid-cols-[1fr_180px]` on desktop, single column on mobile). `TagCloud` is a pure presentational component receiving state and callbacks as props.
 
 ## Complexity Tracking
 
@@ -131,13 +133,15 @@ lib/
 | Accessibility | `aria-pressed` on `<button>` | WAI-ARIA 1.1 standard |
 
 **Files to Create**:
-- `components/TagFilteredPostList.tsx` (new — "use client")
+- `components/BlogWithSidebar.tsx` (new — "use client" — two-column layout + filter state)
+- `components/TagCloud.tsx` (new — "use client" — sticky sidebar tag cloud)
 
 **Files to Modify**:
 - `lib/types.ts` — add `tags: string[]` to `BlogPost`
 - `lib/posts.ts` — read and normalize tags in `getAllPosts()`
-- `app/page.tsx` — replace post list with `<TagFilteredPostList posts={posts} />`
-- `lib/posts/*.md` — add `tags:` frontmatter: at least 3 posts in Phase 2 (T004); all remaining posts in Phase 4 (T011)
+- `app/page.tsx` — replace `TagFilteredPostList` with `BlogWithSidebar`; widen to `max-w-5xl`
+- `components/Navigation.tsx` — widen inner container to `max-w-5xl`
+- `lib/posts/*.md` — add `tags:` frontmatter to all 7 posts
 
 **Status**: ✅ Design complete. Ready for task execution.
 

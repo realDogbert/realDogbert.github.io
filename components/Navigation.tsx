@@ -17,7 +17,7 @@ export default function Navigation({ className = '' }: NavigationProps) {
       className={`fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-md border-b border-neutral-100 ${className}`}
       aria-label="Main navigation"
     >
-      <div className="max-w-3xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-6">
         <div className="flex justify-between items-center h-14">
           {/* Brand */}
           <Link

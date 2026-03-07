@@ -90,9 +90,19 @@
 - [X] T016 [P] Responsive check: verify tag list wraps gracefully on narrow viewports — components/TagFilteredPostList.tsx
 - [X] T017 Run `npm run build` and confirm zero TypeScript errors and zero ESLint warnings
 - [X] T018 [P] Run `npm run lint` and fix any issues
-- [ ] T019 Visual QA on mobile (375px) and desktop (1280px) viewports
+- [X] T019 Visual QA on mobile (375px) and desktop (1280px) viewports
 - [X] T020 [P] Update `lib/types.ts` JSDoc comment for `tags` field if not already done — lib/types.ts
+---
 
+## Phase 7: Tag Cloud UI Redesign ✅ COMPLETE
+
+**Goal**: Replace the inline tag filter bar above posts with a sticky right-hand Tag Cloud sidebar. Tags are sorted by frequency and sized proportionally.
+
+- [X] T021 Create `TagCloud` Client Component — sticky sidebar, frequency-sorted tags, font size scaled 0.75rem–1.25rem by frequency, opacity-dimmed inactive tags, orange pill active state, `aria-pressed`, "× Alle Beiträge" reset link shown only when filter is active — components/TagCloud.tsx
+- [X] T022 Create `BlogWithSidebar` Client Component — two-column `grid-cols-[1fr_180px]` layout on `lg`, single-column on mobile (TagCloud above posts); owns `activeTag` state and passes callbacks to `TagCloud`; heading switches to `#tagname` when filter is active — components/BlogWithSidebar.tsx
+- [X] T023 Update `app/page.tsx` — replace `<TagFilteredPostList>` with `<BlogWithSidebar>`; widen max container from `max-w-3xl` to `max-w-5xl` — app/page.tsx
+- [X] T024 Update `Navigation.tsx` — widen inner container from `max-w-3xl` to `max-w-5xl` to align nav with new page width — components/Navigation.tsx
+- [X] T025 Refine `TagCloud` heading — remove orange top border, remove bullet point, rename label from "Themen" to "Tags" — components/TagCloud.tsx
 ---
 
 ## Dependencies & Execution Order
