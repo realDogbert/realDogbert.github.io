@@ -25,8 +25,7 @@ export default function AboutPage() {
 
           <h2>Über diesen Blog</h2>
           <p>
-            Mein Name ist Frank von Eitzen – Software Architekt bei der  
-            <a href="https://www.bmw.de/de/index.html" className="text-orange">BMW AG</a> und Hobbyist in Sachen Fitness, Gaming und Miniaturmalerei. 
+            Mein Name ist Frank von Eitzen – Software Architekt bei der <a href="https://www.bmw.de/de/index.html" className="text-orange">BMW AG</a> und Hobbyist in Sachen Fitness, Gaming und Miniaturmalerei. 
           </p>
           <p>
             Hier schreibe ich über alles, was mich bewegt, inspiriert oder nervt. 
