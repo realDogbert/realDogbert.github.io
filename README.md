@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Grob skizziert
 
-## Getting Started
+Willkommen zu **grob skizziert** — einem persönlichen Blog über Webentwicklung, Technologie und Softwaredesign.
 
-First, run the development server:
+## Über diesen Blog
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Der Blog wird von Frank von Eitzen betrieben, Software Architekt bei der [BMW AG](https://www.bmw.de/de/index.html). Hier findest du Beiträge zu Themen wie Webentwicklung, Softwarearchitektur, Fitness, Gaming und Miniaturmalerei. Alle Meinungen sind persönlich und spiegeln nicht die Ansichten des Arbeitgebers wider.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologie
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js 16**
+- **React 19**
+- **Tailwind CSS**
+- Markdown-basierte Blogposts, statisch generiert
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Projektstruktur
 
-## Learn More
+- `app/` — Next.js App Router, Seiten und Layouts
+- `components/` — Wiederverwendbare UI-Komponenten
+- `lib/` — Hilfsfunktionen, Markdown-Parser, Post-Logik
+- `public/` — Fonts und Bilder
+- `specs/` — Spezifikationen und Pläne
 
-To learn more about Next.js, take a look at the following resources:
+## Entwicklung
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Lokale Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Repository klonen:
+	```bash
+	git clone https://github.com/realDogbert/realDogbert.github.io.git
+	cd realDogbert.github.io
+	```
+2. Abhängigkeiten installieren:
+	```bash
+	npm install
+	```
+3. Entwicklungsserver starten:
+	```bash
+	npm run dev
+	```
+	Die Seite ist unter [http://localhost:3000](http://localhost:3000) erreichbar.
 
-## Deploy on Vercel
+### Build & Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Produktion bauen:
+  ```bash
+  npm run build
+  ```
+- Deployment auf Vercel oder anderen Next.js-fähigen Plattformen möglich.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Linting & Qualität
+
+- Linting:
+  ```bash
+  npm run lint
+  ```
+
+## Lizenz
+
+MIT License
+
+---
+
+Fragen, Feedback oder Anregungen? Einfach ein Issue auf GitHub erstellen!
