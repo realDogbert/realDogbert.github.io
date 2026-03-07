@@ -4,6 +4,8 @@ author: "Frank von Eitzen"
 published: "2013-12-28"
 excerpt: "Schön und gut, wenn man weiß, was man machen will. Ich will ein Blog mit Ghost aufbauen. Aber wo soll es gehostet werden? Node.js ist bisher bei Providern noch nicht weit verbreitet und mein Geldbeutel ist schmal. Das schränkt die Auswahl schon mal ein."
 slug: "als-ich-uebernaut-wurde"
+tags:
+  - blog
 ---
 
 

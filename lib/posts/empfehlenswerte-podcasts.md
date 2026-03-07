@@ -4,6 +4,9 @@ author: "Frank von Eitzen"
 published: "2015-01-05"
 excerpt: "Podcasts sind nicht nur ein guter Zeitvertreib, sondern können auch im beruflichen Leben gute Dienste erweisen. Ich habe inzwischen eine ganze Menge an Podcasts durchgehört, aber die folgenden 3 sind schon seit längerem in meiner Favoritenliste."
 slug: "empfehlenswerte-podcasts"
+tags:
+  - podcasts
+  - medien
 ---
 
 ## [Freak Show](http://freakshow.fm)

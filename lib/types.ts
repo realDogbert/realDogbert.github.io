@@ -47,6 +47,11 @@ export interface BlogPost {
    * Post author name
    */
   author: string;
+
+  /**
+   * Normalized tags (lowercase, trimmed) for filtering
+   */
+  tags: string[];
 }
 
 /**

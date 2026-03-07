@@ -43,7 +43,8 @@ export function getAllPosts(): BlogPost[] {
       content: paragraphs,
       publishedAt: new Date(data.published),
       readTime: calculateReadTime(paragraphs),
-      author: data.author
+      author: data.author,
+      tags: (data.tags ?? []).map((t: string) => t.toLowerCase().trim()),
     };
 
     return post;

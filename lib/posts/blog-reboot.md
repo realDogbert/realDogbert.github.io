@@ -4,6 +4,9 @@ author: "Frank von Eitzen"
 published: "2026-03-01"
 excerpt: "Nach zehn Jahren wieder ein neuer Artikel im Blog. Warum ich noch immer ein persönliches Blog betreibe – und warum ausgerechnet jetzt."
 slug: "blog-reboot"
+tags:
+  - blog
+  - persönlich
 ---
 
 ## Warum jetzt wieder ein Blog?

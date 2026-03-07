@@ -4,6 +4,9 @@ author: "Frank von Eitzen"
 published: "2014-06-17"
 excerpt: "Am 17.06.2014 war es endlich so weit: die TEDx an der Technischen Universität München (kurz TEDx TUM) fand unter dem Motto Pushing Boundaries statt. Ich bin schon seit eh und je ein großer Fan der TED, bzw TEDx Talks und die Möglichkeit bei einem dieser live Talks dabei zu sein konnte ich mir nicht entgehen lassen."
 slug: "Tedx-TUM-2014"
+tags:
+  - event
+  - persönlich
 ---
 
 Vorweg: Das Organisations-Team der TEDx TUM hat eine tolle Arbeit geleistet. Auch das Hauptgebäude der TUM in der Arcisstr. passt gut als Veranstaltungsort. Einzig zwei Punkte könnten noch verbessert werden:

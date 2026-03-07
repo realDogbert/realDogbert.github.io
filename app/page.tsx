@@ -1,5 +1,5 @@
 import Header from '@/components/Header';
-import BlogCard from '@/components/BlogCard';
+import TagFilteredPostList from '@/components/TagFilteredPostList';
 import { posts } from '@/lib/posts';
 
 export default function Home() {
@@ -12,11 +12,7 @@ export default function Home() {
           <h2 className="text-xs font-body font-semibold tracking-widest uppercase text-neutral-300 mb-2 animate-fade-in">
             Neueste Beiträge
           </h2>
-          <div className="flex flex-col">
-            {posts.map((post, index) => (
-              <BlogCard key={post.slug} post={post} index={index} />
-            ))}
-          </div>
+          <TagFilteredPostList posts={posts} />
         </section>
       </div>
     </div>

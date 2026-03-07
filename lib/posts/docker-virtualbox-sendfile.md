@@ -4,6 +4,8 @@ author: "Frank von Eitzen"
 published: "2015-11-01"
 excerpt: "Wie stellt man sich die Entwicklung einer Webseite vor? An sich ganz einfach, man erzeugt ein Verzeichnis und legt dort die zu der Webseite gehörenden HTML, CSS und JavaScript Dateien ab. Dann öffnet man die lokale Startseite mit dem Browser und entwickelt so vor sich hin."
 slug: "docker-virtualbox-sendfile"
+tags:
+  - docker
 ---
 
 # Test
