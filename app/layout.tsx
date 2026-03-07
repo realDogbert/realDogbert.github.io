@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import "./globals.css";
@@ -90,13 +91,13 @@ export default function RootLayout({
                   <path d="M9 18c-4.51 2-5-2-7-2" />
                 </svg>
               </a>
-              <a
+              <Link
                 href="/impressum"
                 aria-label="Impressum"
                 className="text-neutral-400 hover:text-orange transition-colors duration-200"
               >
                 Impressum
-              </a>
+              </Link>
             </div>
           </div>
         </footer>
