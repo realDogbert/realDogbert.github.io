@@ -19,8 +19,8 @@
 
 **Purpose**: Register the `ThemeMode` type and the `@custom-variant` Tailwind directive — foundational plumbing that all subsequent tasks depend on.
 
-- [ ] T001 [P] Add `ThemeMode = 'light' | 'dark'` and `ThemeToggleProps` types to `lib/types.ts`
-- [ ] T002 [P] Add `@custom-variant dark (&:where(.dark, .dark *))` to `app/globals.css` immediately after `@import "tailwindcss"`
+- [X] T001 [P] Add `ThemeMode = 'light' | 'dark'` and `ThemeToggleProps` types to `lib/types.ts`
+- [X] T002 [P] Add `@custom-variant dark (&:where(.dark, .dark *))` to `app/globals.css` immediately after `@import "tailwindcss"`
 
 **Checkpoint**: `ThemeMode` type exported; `dark:` Tailwind variant activates on `<html class="dark">`.
 
@@ -32,10 +32,10 @@
 
 **⚠️ CRITICAL**: US1, US2, and US3 all depend on this phase.
 
-- [ ] T003 Add `suppressHydrationWarning` attribute to `<html>` element in `app/layout.tsx`
-- [ ] T004 Inject inline FOUC-prevention `<script dangerouslySetInnerHTML>` into `<head>` in `app/layout.tsx` — reads `localStorage.getItem('theme')`, adds `class="dark"` to `document.documentElement` if value is `'dark'`, wrapped in `try/catch`
-- [ ] T005 [P] Add dark-mode base color tokens to `app/globals.css` (`body` background and foreground for `html.dark`)
-- [ ] T006 [P] Add dark scrollbar colors to `app/globals.css` (`::-webkit-scrollbar-*` for dark mode)
+- [X] T003 Add `suppressHydrationWarning` attribute to `<html>` element in `app/layout.tsx`
+- [X] T004 Inject inline FOUC-prevention `<script dangerouslySetInnerHTML>` into `<head>` in `app/layout.tsx` — reads `localStorage.getItem('theme')`, adds `class="dark"` to `document.documentElement` if value is `'dark'`, wrapped in `try/catch`
+- [X] T005 [P] Add dark-mode base color tokens to `app/globals.css` (`body` background and foreground for `html.dark`)
+- [X] T006 [P] Add dark scrollbar colors to `app/globals.css` (`::-webkit-scrollbar-*` for dark mode)
 
 **Checkpoint**: Page loads with correct dark/light class applied before first paint. No FOUC visible when reloading with `localStorage.theme = 'dark'`.
 
@@ -49,11 +49,11 @@
 
 ### Implementation
 
-- [ ] T007 [US1] Create `components/ThemeToggle.tsx` as a `'use client'` component — `useEffect`-based `mounted` guard, reads `document.documentElement.classList.contains('dark')` for initial state, toggles class on `<html>` on click, inline SVG sun and moon icons, `aria-label` in German (FR-007)
-- [ ] T008 [US1] Add `<ThemeToggle />` to the desktop nav section of `components/Navigation.tsx` (alongside the existing desktop `NavLink` elements)
-- [ ] T009 [US1] Add `<ThemeToggle />` to the mobile nav section of `components/Navigation.tsx` (inside the mobile dropdown)
-- [ ] T010 [P] [US1] Apply `dark:` Tailwind utilities to `components/Navigation.tsx` — nav background (`dark:bg-neutral-950/85`), border (`dark:border-neutral-800`), brand link, NavLink text and hover colors
-- [ ] T011 [P] [US1] Apply `dark:` Tailwind utilities to `app/layout.tsx` footer — border, text, icon link colors
+- [X] T007 [US1] Create `components/ThemeToggle.tsx` as a `'use client'` component — `useEffect`-based `mounted` guard, reads `document.documentElement.classList.contains('dark')` for initial state, toggles class on `<html>` on click, inline SVG sun and moon icons, `aria-label` in German (FR-007)
+- [X] T008 [US1] Add `<ThemeToggle />` to the desktop nav section of `components/Navigation.tsx` (alongside the existing desktop `NavLink` elements)
+- [X] T009 [US1] Add `<ThemeToggle />` to the mobile nav section of `components/Navigation.tsx` (inside the mobile dropdown)
+- [X] T010 [P] [US1] Apply `dark:` Tailwind utilities to `components/Navigation.tsx` — nav background (`dark:bg-neutral-950/85`), border (`dark:border-neutral-800`), brand link, NavLink text and hover colors
+- [X] T011 [P] [US1] Apply `dark:` Tailwind utilities to `app/layout.tsx` footer — border, text, icon link colors
 
 **Checkpoint**: Toggle button visible in header, clicking it switches full-page dark/light styling. Icon updates correctly. Keyboard accessible (Tab + Enter/Space).
 
@@ -67,8 +67,8 @@
 
 ### Implementation
 
-- [ ] T012 [US2] Implement `localStorage.setItem('theme', ...)` write inside `ThemeToggle.tsx` `toggle` handler, wrapped in `try/catch` for unavailable storage (FR-006)
-- [ ] T013 [US2] Verify FOUC-prevention script from T004 correctly reads back the stored value and applies `dark` class before hydration — manual test: set `localStorage.theme = 'dark'` → hard reload → no flash
+- [X] T012 [US2] Implement `localStorage.setItem('theme', ...)` write inside `ThemeToggle.tsx` `toggle` handler, wrapped in `try/catch` for unavailable storage (FR-006)
+- [X] T013 [US2] Verify FOUC-prevention script from T004 correctly reads back the stored value and applies `dark` class before hydration — manual test: set `localStorage.theme = 'dark'` → hard reload → no flash
 
 **Checkpoint**: Mode survives page reload with zero flash of incorrect mode. Storage unavailable (private window) silently defaults to light mode.
 
@@ -82,8 +82,8 @@
 
 ### Implementation
 
-- [ ] T014 [US3] Verify `next.config.ts` retains `output: 'export'` — no changes needed, confirm with `npm run build`
-- [ ] T015 [P] [US3] Confirm `ThemeToggle.tsx` contains no `fetch`, `axios`, or server calls — code review checkoff
+- [X] T014 [US3] Verify `next.config.ts` retains `output: 'export'` — no changes needed, confirm with `npm run build`
+- [X] T015 [P] [US3] Confirm `ThemeToggle.tsx` contains no `fetch`, `axios`, or server calls — code review checkoff
 
 **Checkpoint**: `npm run build` succeeds with static export intact. No new server routes. Network tab shows zero requests on toggle.
 
@@ -93,13 +93,13 @@
 
 **Purpose**: Apply `dark:` utilities to remaining page surfaces so dark mode is consistent across all pages.
 
-- [ ] T016 [P] Apply `dark:` Tailwind utilities to `components/BlogCard.tsx` — card background, border, title, metadata, tag colors
-- [ ] T017 [P] Apply `dark:` Tailwind utilities to `components/BlogPostContent.tsx` — prose text, headings, code blocks, blockquotes
-- [ ] T018 [P] Apply `dark:` Tailwind utilities to `components/BlogWithSidebar.tsx` — sidebar background and border
-- [ ] T019 [P] Apply `dark:` Tailwind utilities to `components/TagCloud.tsx` — tag chip background and text
-- [ ] T020 [P] Apply `dark:` Tailwind utilities to `components/TagFilteredPostList.tsx` — any hardcoded light colors
-- [ ] T021 Run `npm run build` and confirm zero TypeScript errors (SC-006)
-- [ ] T022 Run `npm run lint` and fix any ESLint issues
+- [X] T016 [P] Apply `dark:` Tailwind utilities to `components/BlogCard.tsx` — card background, border, title, metadata, tag colors
+- [X] T017 [P] Apply `dark:` Tailwind utilities to `components/BlogPostContent.tsx` — prose text, headings, code blocks, blockquotes
+- [X] T018 [P] Apply `dark:` Tailwind utilities to `components/BlogWithSidebar.tsx` — sidebar background and border
+- [X] T019 [P] Apply `dark:` Tailwind utilities to `components/TagCloud.tsx` — tag chip background and text
+- [X] T020 [P] Apply `dark:` Tailwind utilities to `components/TagFilteredPostList.tsx` — any hardcoded light colors
+- [X] T021 Run `npm run build` and confirm zero TypeScript errors (SC-006)
+- [X] T022 Run `npm run lint` and fix any ESLint issues
 - [ ] T023 Visual QA: toggle dark mode on home page, blog post page, about page, impressum page on mobile and desktop viewports
 - [ ] T024 [P] Accessibility check: confirm toggle button is reachable by keyboard Tab, activatable by Enter/Space, and announces correctly via screen reader (SC-004)
 - [ ] T025 [P] Run Lighthouse on production build output (`npm run build && npx serve out`) — verify Lighthouse Performance ≥90 and Accessibility ≥95 (constitution V, SC-005)

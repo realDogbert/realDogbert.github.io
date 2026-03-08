@@ -6,6 +6,18 @@
  */
 
 /**
+ * The two supported display modes for the site.
+ */
+export type ThemeMode = 'light' | 'dark';
+
+/**
+ * Props for the ThemeToggle component.
+ */
+export interface ThemeToggleProps {
+  className?: string;
+}
+
+/**
  * Represents a single blog post with metadata and content.
  * 
  * All blog posts are statically defined and generated at build time.

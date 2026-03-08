@@ -20,7 +20,7 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-neutral-950">
       <div className="max-w-3xl mx-auto px-6 pt-12 sm:pt-20 pb-16">
         {/* Back link */}
         <Link
@@ -42,14 +42,14 @@ export default async function BlogPost({ params }: BlogPostPageProps) {
               >
                 {formatDate(post.publishedAt)}
               </time>
-              <span className="text-neutral-300">/</span>
+              <span className="text-neutral-300 dark:text-neutral-600">/</span>
               <span className="text-xs font-body tracking-wide text-neutral-400">
                 {post.readTime} Min. Lesedauer
               </span>
             </div>
 
             {/* Title */}
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-neutral-900 tracking-tight leading-[1.1] mb-6">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-neutral-900 dark:text-neutral-100 tracking-tight leading-[1.1] mb-6">
               {post.title}
             </h1>
 

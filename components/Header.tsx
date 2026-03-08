@@ -3,7 +3,7 @@ import { HeaderProps } from '@/lib/types';
 export default function Header({ title = "Grob skizziert", tagline }: HeaderProps) {
   return (
     <header className="mb-16 animate-fade-in-up">
-      <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-semibold tracking-tight text-neutral-900 leading-[0.95]">
+      <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 leading-[0.95]">
         {title}<span className="text-orange">.</span>
       </h1>
       {tagline && (

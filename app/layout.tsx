@@ -54,18 +54,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de">
+    <html lang="de" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.classList.add('dark');}catch(e){}})();` }} />
+      </head>
       <body
-        className={`${fraunces.variable} ${outfit.variable} antialiased`}
+        className={`${fraunces.variable} ${outfit.variable} antialiased bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100`}
       >
         <GoogleAnalytics />
         <Navigation />
         <main className="pt-14">
           {children}
         </main>
-        <footer className="border-t border-neutral-200 mt-24">
+        <footer className="border-t border-neutral-200 dark:border-neutral-800 mt-24">
           <div className="max-w-5xl mx-auto px-6 py-10 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-neutral-400 font-body">
+            <p className="text-sm text-neutral-400 dark:text-neutral-500 font-body">
               &copy; Frank von Eitzen {new Date().getFullYear()}
             </p>
             <div className="flex items-center gap-5">
@@ -73,7 +76,7 @@ export default function RootLayout({
                 <a
                   href="mailto:FvEitzen@gmail.com"
                   aria-label="E-Mail senden"
-                  className="text-neutral-400 hover:text-orange transition-colors duration-200"
+                  className="text-neutral-400 dark:text-neutral-500 hover:text-orange dark:hover:text-orange transition-colors duration-200"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <rect width="20" height="16" x="2" y="4" rx="2" />
@@ -85,7 +88,7 @@ export default function RootLayout({
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub Profil"
-                  className="text-neutral-400 hover:text-orange transition-colors duration-200"
+                  className="text-neutral-400 dark:text-neutral-500 hover:text-orange dark:hover:text-orange transition-colors duration-200"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
@@ -93,10 +96,10 @@ export default function RootLayout({
                   </svg>
                 </a>
               </div>
-              <span className="w-px h-4 bg-neutral-300" aria-hidden="true" />
+              <span className="w-px h-4 bg-neutral-300 dark:bg-neutral-700" aria-hidden="true" />
               <Link
                 href="/impressum"
-                className="text-xs uppercase tracking-widest text-neutral-400 hover:text-orange transition-colors duration-200 font-body"
+                className="text-xs uppercase tracking-widest text-neutral-400 dark:text-neutral-500 hover:text-orange dark:hover:text-orange transition-colors duration-200 font-body"
               >
                 Impressum
               </Link>

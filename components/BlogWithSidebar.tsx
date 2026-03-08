@@ -25,7 +25,7 @@ export default function BlogWithSidebar({ posts }: BlogWithSidebarProps) {
     <div className="grid grid-cols-1 lg:grid-cols-[1fr_180px] gap-8 lg:gap-16 items-start">
       {/* Posts column — visually first on desktop, second in DOM order on mobile */}
       <div className="order-2 lg:order-1">
-        <h2 className="text-xs font-body font-semibold tracking-widest uppercase text-neutral-300 mb-2 animate-fade-in">
+        <h2 className="text-xs font-body font-semibold tracking-widest uppercase text-neutral-300 dark:text-neutral-600 mb-2 animate-fade-in">
           {activeTag ? `#${activeTag}` : "Neueste Beiträge"}
         </h2>
         <div className="flex flex-col">

@@ -44,7 +44,7 @@ export default function TagFilteredPostList({ posts }: TagFilteredPostListProps)
               className={`px-3 py-1 rounded-full text-xs font-body font-semibold tracking-wide uppercase transition-colors duration-200 ${
                 activeTag === tag
                   ? "bg-orange text-white"
-                  : "bg-neutral-100 text-neutral-500 hover:bg-neutral-200 hover:text-neutral-700"
+                  : "bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700 hover:text-neutral-700 dark:hover:text-neutral-100"
               }`}
             >
               {tag}
@@ -56,7 +56,7 @@ export default function TagFilteredPostList({ posts }: TagFilteredPostListProps)
             <button
               onClick={() => setActiveTag(null)}
               aria-label="Filter zurücksetzen — alle Beiträge anzeigen"
-              className="px-3 py-1 rounded-full text-xs font-body font-semibold tracking-wide uppercase border border-neutral-300 text-neutral-400 hover:border-neutral-400 hover:text-neutral-600 transition-colors duration-200"
+              className="px-3 py-1 rounded-full text-xs font-body font-semibold tracking-wide uppercase border border-neutral-300 dark:border-neutral-700 text-neutral-400 dark:text-neutral-500 hover:border-neutral-400 dark:hover:border-neutral-600 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors duration-200"
             >
               Alle Beiträge
             </button>

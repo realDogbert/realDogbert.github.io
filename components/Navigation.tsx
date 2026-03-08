@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import type { NavigationProps } from '@/lib/types'
+import ThemeToggle from '@/components/ThemeToggle'
 
 export default function Navigation({ className = '' }: NavigationProps) {
   const pathname = usePathname()
@@ -14,7 +15,7 @@ export default function Navigation({ className = '' }: NavigationProps) {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-md border-b border-neutral-100 ${className}`}
+      className={`fixed top-0 left-0 right-0 z-50 bg-white/85 dark:bg-neutral-950/85 backdrop-blur-md border-b border-neutral-100 dark:border-neutral-800 ${className}`}
       aria-label="Main navigation"
     >
       <div className="max-w-5xl mx-auto px-6">
@@ -22,21 +23,22 @@ export default function Navigation({ className = '' }: NavigationProps) {
           {/* Brand */}
           <Link
             href="/"
-            className="font-display text-lg tracking-tight text-neutral-900 transition-colors duration-200 hover:text-orange"
+            className="font-display text-lg tracking-tight text-neutral-900 dark:text-neutral-100 transition-colors duration-200 hover:text-orange dark:hover:text-orange"
             aria-current={isHomeActive ? 'page' : undefined}
           >
             grob skizziert<span className="text-orange font-bold">.</span>
           </Link>
 
           {/* Desktop links */}
-          <div className="hidden sm:flex items-center gap-8">
+          <div className="hidden sm:flex items-center gap-6">
             <NavLink href="/" active={isHomeActive}>Beiträge</NavLink>
             <NavLink href="/about" active={isAboutActive}>Über</NavLink>
+            <ThemeToggle />
           </div>
 
           {/* Mobile toggle */}
           <button
-            className="sm:hidden p-2 -mr-2 text-neutral-500 hover:text-neutral-900 transition-colors"
+            className="sm:hidden p-2 -mr-2 text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-expanded={mobileOpen}
             aria-label="Navigation öffnen"
@@ -65,13 +67,14 @@ export default function Navigation({ className = '' }: NavigationProps) {
           mobileOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="border-t border-neutral-100 bg-white/95 backdrop-blur-md px-6 py-5 flex flex-col gap-4">
+        <div className="border-t border-neutral-100 dark:border-neutral-800 bg-white/95 dark:bg-neutral-950/95 backdrop-blur-md px-6 py-5 flex flex-col gap-4">
           <MobileNavLink href="/" active={isHomeActive} onClick={() => setMobileOpen(false)}>
             Beiträge
           </MobileNavLink>
           <MobileNavLink href="/about" active={isAboutActive} onClick={() => setMobileOpen(false)}>
             Über
           </MobileNavLink>
+          <ThemeToggle className="self-start" />
         </div>
       </div>
     </nav>
@@ -84,8 +87,8 @@ function NavLink({ href, active, children }: { href: string; active: boolean; ch
       href={href}
       className={`group relative text-[0.8125rem] font-body tracking-widest uppercase transition-colors duration-200 py-1 ${
         active
-          ? 'text-neutral-900'
-          : 'text-neutral-400 hover:text-neutral-900'
+          ? 'text-neutral-900 dark:text-neutral-100'
+          : 'text-neutral-400 hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-neutral-100'
       }`}
       aria-current={active ? 'page' : undefined}
     >
@@ -117,7 +120,7 @@ function MobileNavLink({
       className={`text-base font-body tracking-wide transition-colors duration-200 ${
         active
           ? 'text-orange font-medium'
-          : 'text-neutral-500 hover:text-neutral-900'
+          : 'text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100'
       }`}
       aria-current={active ? 'page' : undefined}
     >

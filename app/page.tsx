@@ -4,7 +4,7 @@ import { posts } from '@/lib/posts';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-neutral-950">
       <div className="max-w-5xl mx-auto px-6 pt-16 sm:pt-24 pb-12">
         <Header tagline="Wer nicht auf das Kleine schaut, scheitert am Großem." />
 

@@ -7,17 +7,17 @@ export const metadata: Metadata = {
 
 export default function ImpressumPage() {
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-white dark:bg-neutral-950">
             <div className="max-w-5xl mx-auto px-6 pt-16 sm:pt-24 pb-16">
                 {/* Page header */}
                 <header className="mb-14 animate-fade-in-up">
-                    <h1 className="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-neutral-900 leading-tight">
+                    <h1 className="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 leading-tight">
                         Impressum<span className="text-orange">.</span>
                     </h1>
                     <div className="mt-6 w-12 h-[3px] bg-orange" aria-hidden="true" />
                 </header>
 
-                <article className="prose max-w-none animate-fade-in stagger-2">
+                <article className="prose dark:prose-invert max-w-none animate-fade-in stagger-2">
                     <h2>Angaben gemäß § 5 TMG</h2>
                     <h2>Kontakt:</h2>
                     <p>Frank von Eitzen<br />

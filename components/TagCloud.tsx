@@ -70,7 +70,7 @@ export default function TagCloud({ posts, activeTag, onTagClick, onReset }: TagC
               className={
                 isActive
                   ? "font-body font-semibold tracking-wide text-white bg-orange rounded px-2 py-0.5 transition-all duration-200 leading-none"
-                  : "font-body font-medium tracking-wide text-neutral-800 hover:text-orange hover:opacity-100 transition-all duration-200 leading-none"
+                  : "font-body font-medium tracking-wide text-neutral-800 dark:text-neutral-300 hover:text-orange hover:opacity-100 transition-all duration-200 leading-none"
               }
             >
               {tag}
