@@ -48,14 +48,26 @@ Frank omits references to his employer in every one of his blog posts.
 
 ---
 ## Technical Details
-
+### General
 All Posts are located in the `lib/posts` directory. Each post is a Markdown file with YAML front matter containing metadata such as title, author, published date, excerpt, and slug. The content of the post follows the front matter and can include headings, paragraphs, images, links, and other Markdown elements.
 
 I you create a blog post, make sure to include the appropriate front matter and structure the content according to the characteristics outlined above.
 
 Before saving the file to the `lib/posts` directory, ensure that the content is well-written, engaging, and adheres to the style guidelines. Show the final content to the user for review before saving.
 
-Example frontmatter for a post:
+### Tags
+Tags are used to categorize posts and make them easier to find. They should be relevant to the content of the post. Tags should be included in the front matter under the `tags` field as a list.
+The list of currently used tags includes:
+- blog
+- docker
+- persönlich
+- event
+- medien
+- podcasts
+
+If possible, use a tag of the list. If you think a new tag is necessary, please suggest it to the user and wait for their approval before adding it to the post.
+
+### Example frontmatter for a post
 ```yaml
 ---
 title: "Als ich Übernaut wurde"
@@ -63,5 +75,9 @@ author: "Frank von Eitzen"
 published: "2013-12-28"
 excerpt: "Schön und gut, wenn man weiß, was man machen will. Ich will ein Blog mit Ghost aufbauen. Aber wo soll es gehostet werden? Node.js ist bisher bei Providern noch nicht weit verbreitet und mein Geldbeutel ist schmal. Das schränkt die Auswahl schon mal ein."
 slug: "als-ich-uebernaut-wurde"
+tags:
+  - docker
+  - blog
 ---
 ```
+
