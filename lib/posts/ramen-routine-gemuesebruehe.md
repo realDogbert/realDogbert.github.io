@@ -2,7 +2,7 @@
 title: "Ramen-Routine gestartet: Kochbuch, Bowl und Gemüsebrühe"
 author: "Frank von Eitzen"
 published: "2026-03-08"
-excerpt: "Wie ich mit einer cleveren Geschenk-Kombination in eine Ramen-Routine reingeschubst wurde – und warum selbstgemachte Gemüsebrühe fast wie Softwareentwicklung ist."
+excerpt: "Gemüse Ramen Tom Yum. Wie ich mit einer cleveren Geschenk-Kombination in eine Ramen-Routine reingeschubst wurde – und warum selbstgemachte Gemüsebrühe fast wie Softwareentwicklung ist."
 slug: "ramen-routine-gemuesebruehe"
 tags:
   - persönlich
@@ -11,6 +11,8 @@ tags:
 ![Gemüse Ramen Tom Yum](/images/MEDIA_260302_TomYum.jpeg)
 **Gemüse Ramen Tom Yum**
 *Zubereitung* 25 Min. *Garzeit* 40 Min. *Menge* 4 Schalen
+
+Das Rezept findet ihr am Ende des Posts.
 
 ## Ramen-Routine gestartet: Kochbuch, Bowl und Gemüsebrühe
 
