@@ -5,7 +5,7 @@ published: "2026-03-15"
 excerpt: "Wenn es mal schnell gehen muss, aber trotzdem ordentlich schmecken soll: Red Curry Noodle Soup in 30 Minuten."
 slug: "schnelles-rezept-red-curry-noodle-soup"
 tags:
-  - persoenlich
+  - persönlich
   - rezept
 ---
 
